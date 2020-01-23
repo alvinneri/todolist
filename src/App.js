@@ -10,7 +10,7 @@ class App extends Component {
     return ( 
       <Router>
       
-      <Navbar />
+      {/* <Navbar /> */}
 
       <Route path= '/'  exact component={Dashboard} />
       <Route path='/about' component={About} />
