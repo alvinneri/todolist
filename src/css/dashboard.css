@@ -3,6 +3,7 @@
 *{
     background-color: whitesmoke;
     color: darkslategray;
+    
 
 }
 
@@ -29,4 +30,21 @@ btncustom{
 #listgroupbtn{
     font-size: .7rem!important;
     margin-right: 1rem;
+}
+
+nav{
+    color: darkslategray!important;
+
+}
+
+.navlinkss{
+    color: darkslategray;
+    background-color: whitesmoke;
+}
+
+ol{ 
+    background-color: whitesmoke!important;
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+    font-family: 'Advent Pro', sans-serif;
 }

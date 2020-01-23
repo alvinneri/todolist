@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/dashboard.css';
 import { MDBInput } from "mdbreact";
 import { MDBListGroup, MDBListGroupItem, MDBContainer, MDBAnimation } from "mdbreact";
+import { BrowserRouter as Router,  } from 'react-router-dom';
 
 class Dashboard extends Component {
 
@@ -10,7 +11,7 @@ class Dashboard extends Component {
         super(props);
         this.state ={
             todo : '',
-            priority : ''
+            error :''
         }
     }
 
@@ -24,18 +25,27 @@ class Dashboard extends Component {
 
     onSubmitAdd = () => {
        
-      const number = Math.floor(Math.random() * 20);
+        if(this.state.todo ===''){
+            this.setState({
+                error: 'Write something'
+            })
+        }
+        else{
+            const number = Math.floor(Math.random() * 20);
 
-      if(localStorage.getItem(number)){
-        localStorage.setItem(number+1 , this.state.todo )
-      }
-      else{
-        localStorage.setItem(number, this.state.todo )
-      }
-
-      this.setState({
-          todo : ''
-      })
+            if(localStorage.getItem(number)){
+              localStorage.setItem(number+1 , this.state.todo )
+            }
+            else{
+              localStorage.setItem(number, this.state.todo )
+            }
+      
+            this.setState({
+                todo : '',
+                error : ''
+            })
+        }
+     
        
     }
 
@@ -81,14 +91,15 @@ class Dashboard extends Component {
         </MDBAnimation>
         </div>
         
-
         )
 
         return ( 
+            <Router>
             <div>
                 <div className="container mt-5 mx-auto ">
                     <h1>TO-DO LIST</h1>
                     <p>Developed by:<i> Alvin Neri</i></p>
+                    <p className="alert-warning">{this.state.error}</p>
                     <MDBInput label="Add todo" id="input" name="todo" value={this.state.todo} onChange={this.onChangeTodo} />
                     <button className="btn btn-light btncustom" onClick={this.onSubmitAdd}>ADD</button>
                     <button className="btn btn-light btncustom" onClick={this.onSubmitDelete}>DELETE ALL</button>
@@ -102,6 +113,7 @@ class Dashboard extends Component {
                    
                 </div>
             </div>
+            </Router>
          );
     }
 }
