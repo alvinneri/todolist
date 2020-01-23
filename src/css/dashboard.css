@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro|Bangers&display=swap');
+
+*{
+    background-color: whitesmoke;
+    color: darkslategray;
+
+}
+
+h1{
+    font-family: 'Bangers' , cursive;
+}
+
+btncustom{
+    font-size: 1rem!important;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+#input{
+    font-family: 'Advent Pro', sans-serif;
+    color: darkslategray;
+    font-size: 1.5rem;
+}
+
+#list{
+    color: darkslategray;
+
+}
+
+#listgroupbtn{
+    font-size: .7rem!important;
+    margin-right: 1rem;
+}
