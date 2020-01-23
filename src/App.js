@@ -2,7 +2,8 @@ import React ,{Component} from 'react';
 import Dashboard from './components/dashboard';
 import About from './components/about';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Navbar from './components/navbar';
+import Navbar from './components/navbar'
+
 
 class App extends Component {
   
@@ -10,7 +11,7 @@ class App extends Component {
     return ( 
       <Router>
       
-      {/* <Navbar /> */}
+      <Navbar />
 
       <Route path= '/'  exact component={Dashboard} />
       <Route path='/about' component={About} />
